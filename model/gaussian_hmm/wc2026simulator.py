@@ -349,7 +349,7 @@ def _simulate_once(
                     team=home, opponent=away,
                     as_of_date=date, tournament="FIFA World Cup",
                 )
-                hg, ag = _sample_scoreline(pred["Win"], pred["Draw"], pred["Loss"])
+                hg, ag = _sample_scoreline(pred["Win"], pred["Draw"])
                 outcome = 2 if hg > ag else (1 if hg == ag else 0)
                 _update_standing(points, gd, gf, home, away, outcome, hg, ag)
                 sim_pred.append_result(home, away, date, outcome)
